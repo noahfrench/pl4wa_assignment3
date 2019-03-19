@@ -9,6 +9,28 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles/style.css">
+
+  <script>
+        var url = window.location.pathname;
+        var filename = url.substring(url.lastIndexOf('/')+1);
+      
+        function display() {
+          if (filename == "ratedpets.html") {
+            document.getElementById("page-name").innerHTML = "All Pets";
+          } else if (filename == "5star.html") {
+            document.getElementById("page-name").innerHTML = "5 Star Pets";
+          } else if (filename == "4star.html") {
+            document.getElementById("page-name").innerHTML = "4 Star Pets";
+          } else if (filename == "3star.html") {
+            document.getElementById("page-name").innerHTML = "3 Star Pets";
+          } else if (filename == "2star.html") {
+            document.getElementById("page-name").innerHTML = "2 Star Pets";
+          } else if (filename == "1star.html") {
+            document.getElementById("page-name").innerHTML = "1 Star Pets";
+          }
+        }
+    </script>
+
 </head>
 
 <body>

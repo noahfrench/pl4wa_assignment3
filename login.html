@@ -9,6 +9,32 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles/style.css">
+
+  <script>
+  
+      function validateForm() {
+      var x = document.forms["signinForm"]["username"].value;
+      var y = document.forms["signinForm"]["password"].value;
+
+      if (x == "" && y == "") {
+          alert("Username and Password must be filled out")
+          return false;
+      }
+
+      if (x == "") {
+          alert("Username must be filled out");
+          return false;
+        }
+
+      if (y == "") {
+          alert("Password must be filled out");
+          return false;
+      }
+      }
+
+  </script>
+
+
 </head>
 
 <body>
@@ -48,17 +74,17 @@
   <div class="container">
     <h1>Log In</h1>
 
-    <form name="signinForm" >
+    <form name="signinForm" onsubmit="return validateForm()">
     
       <div class="form-group">
         <label for="username">Username:</label>
-        <input type="text" name="username" class="form-control" required />
+        <input type="text" name="username" class="form-control"/>
         <span class="error" id="username-note"></span>        
       </div>
       
       <div class="form-group">
-        <label for="password">Password (min. 6 characters):</label>  
-        <input type="password" name="password" class="form-control" minlength="6" required/>  
+        <label for="password">Password</label>  
+        <input type="password" name="password" class="form-control"/>  
         <span class="error" id="password-note"></span>
       </div>
       

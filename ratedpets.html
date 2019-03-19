@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <meta charset="utf-8">
+        <title>Pets I've Rated</title>
+        <script language="javascript">
+          var imgs = ["pet2.jpg", "pet3.jpg", "pet4.jpg", "pet5.jpg", "pet1.jpg"];
+          
+          function changeImage() {
+              document.getElementById("imgClickAndChange").src = imgs[0]; 
+              imgs.push(imgs.shift())
+          }
+        </script>
+</head>
+
+<body>
+<header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color:#232D4B;">
+          <a class="navbar-brand" href="./home.html" style="font-weight: bold;">Rate These Pets!</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="./ratedpets.html">Pets I've Rated<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Animal</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/">About Us</a>
+              </li>
+              <li class="nav-item active">
+                    <a class="nav-link" href="/">Contact</a>
+                </li>
+              <!--<li class="nav-item">
+                <a class="nav-link disabled" href="/">Disabled</a>
+              </li>-->
+            </ul>
+            <a href="/"><button class="btn" style="background-color: #E57200;" type="submit">Log In</button></a>
+          </div>
+        </nav>
+      </header>
+
+</body>
+</html>

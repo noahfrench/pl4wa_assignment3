@@ -2,19 +2,24 @@
 
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
-fieldset, label { margin: 0; padding: 0; }
-body{ margin: 20px; }
-h1 { font-size: 1.5em; margin: 10px; }
-
-#slideshow {
-    margin-left: auto;
-    margin-right: auto;
+.animal-pic {
+  width: 75%;
+  margin-top: 15px;
+  border-radius: 15px;
 }
+
+.skip-pet {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 /****** Style Star Rating Widget *****/
 
 .rating { 
   border: none;
-  float: left;
+  width: 150px;
+  text-align: center;
 }
 
 .rating > input { display: none; } 

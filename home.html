@@ -1,72 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="styles/style.css">
-        <meta charset="utf-8">
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="styles/style.css">
+
 </head>
 
+	<script>
+
+		var pets = [];
+		var pet1 = {file:"pet1.jpg", name:"Rufus"};
+		var pet2 = {file:"pet2.jpg", name:"Eduardo"};
+		var pet3 = {file:"pet3.jpg", name:"Angelica"};
+		var pet4 = {file:"pet4.jpg", name:"Salad"};
+		var pet5 = {file:"pet5.jpg", name:"Mittens"};
+		
+		pets.push(pet2);
+		pets.push(pet3);
+		pets.push(pet4);
+		pets.push(pet5);
+		pets.push(pet1);
+
+		function changeImage() {
+			document.getElementById("imgClickAndChange").src = pets[0].file;
+			document.getElementById("pet-name").innerHTML = getName(pets[0]);
+			pets.push(pets.shift());
+
+			document.getElementById("stars").reset();
+		}
+
+		var getName = pet => pet.name;
+	</script>
+
 <body>
-<header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color:#232D4B;">
-          <a class="navbar-brand" href="/" style="font-weight: bold;">Rate These Pets!</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="/">Pets I've Rated<span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="/">Animal</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="/">About Us</a>
-              </li>
-              <li class="nav-item active">
-                    <a class="nav-link" href="/">Contact</a>
-                </li>
-              <!--<li class="nav-item">
-                <a class="nav-link disabled" href="/">Disabled</a>
-              </li>-->
-            </ul>
-            <a href="/"><button class="btn" style="background-color: #E57200;" type="submit">Log In</button></a>
-          </div>
-        </nav>
-      </header>
-<h1>We out here.</h1>
-<p>yes we is.</p>
 
-<div class="container" >
-    <div id="slideshow">
-            <img alt="slideshow" src="pet1.jpg" id="imgClickAndChange" onclick="changeImage()" />
-    </div>
-</div>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<a class="navbar-brand" href="#">Rate These Pets!</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">   
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="#">Pets I've Rated</a>
+				</li>              
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Animal</a>
+					<div class="dropdown-menu" aria-labelledby="dropdown01">
+						<a class="dropdown-item" href="#">Dogs</a>
+						<a class="dropdown-item" href="#">Cats</a>
+						<a class="dropdown-item" href="#">Lizards</a>
+						<a class="dropdown-item" href="#">Rabbits</a>
+						<a class="dropdown-item" href="#">Birds</a>
+					</div>
+				</li>                            
+				<li class="nav-item"> 
+					<a class="nav-link" href="#">About Us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Contact</a>
+				</li>
+			</ul>
+		</div>  
+	</nav>
 
-<fieldset class="rating">
-    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-</fieldset>
+	<div class="container text-center" >
 
-<script language="javascript">
-        var imgs = ["pet2.jpg", "pet3.jpg", "pet4.jpg", "pet5.jpg", "pet1.jpg"];
-        
-        function changeImage() {
-            document.getElementById("imgClickAndChange").src = imgs[0];
-            imgs.push(imgs.shift())
-        }
-    </script>
+		<img class="animal-pic" alt="slideshow" src="pet1.jpg" id="imgClickAndChange"/>
+
+
+		<div id="pet-name">
+			<script>
+				document.write(getName(pet1));
+			</script>
+		</div>
+
+		<div class="d-flex justify-content-center" style="padding-top: 10px;">
+			<form class="rating" id="stars">
+				<input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+				<input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+				<input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+				<input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+				<input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+				<input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title=" bad - 2.5 stars"></label>
+				<input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+				<input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Kinda bad - 1.5 stars"></label>
+				<input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+				<input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+			</form>
+			<button type="button" class="btn btn-primary" style="height: 100%; margin-left: 10px;" onclick="changeImage()">submit rating!</button>
+		</div>
+
+		<div class="skip-pet" onclick="changeImage(); clearStars();">
+			skip this pet :/
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
 </body>
 </html>

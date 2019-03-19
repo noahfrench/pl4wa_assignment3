@@ -42,14 +42,42 @@
     </div>  
   </nav>
 
+  <div id="photo-grid"></div>
+
   <script>
 
     var category = "All Pets";
 
+    var render = function (template, node) {
+    if (!node) return;
+      node.innerHTML = (typeof template === 'function' ? template() : template);
+    };
+
+    // A function that returns a string
+    var template = function () {
+        if (category === "All Pets") {
+            template = '<h1>All Pets</h1>';
+        } else if (category === "5 Star Pets") {
+            template = '<h1>5 Star Pets</h1>';
+        } else if (category === "4 Star Pets") {
+            template = '<h1>4 Star Pets</h1>';
+        } else if (category === "3 Star Pets") {
+            template = '<h1>3 Star Pets</h1>';
+        } else if (category === "2 Star Pets") {
+            template = '<h1>2 Star Pets</h1>';
+        } else {
+            template = '<h1>1 Star Pets</h1>';
+        } 
+        return template;
+    };
+
     function changeCategory(newCategory) {
       category = newCategory;
       document.getElementById("grid-title").innerHTML = category;
+      render(template, document.querySelector('#photo-grid'));
     }
+
+  render(template, document.querySelector('#photo-grid'));
 
   </script>
 

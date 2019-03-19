@@ -12,35 +12,33 @@
 	<link rel="stylesheet" href="styles/style.css">
 
 </head>
+<script>
 
-	<script>
+	var pets = [];
+	var pet1 = {file:"pet1.jpg", name:"Rufus"};
+	var pet2 = {file:"pet2.jpg", name:"Eduardo"};
+	var pet3 = {file:"pet3.jpg", name:"Angelica"};
+	var pet4 = {file:"pet4.jpg", name:"Salad"};
+	var pet5 = {file:"pet5.jpg", name:"Mittens"};
 
-		var pets = [];
-		var pet1 = {file:"pet1.jpg", name:"Rufus"};
-		var pet2 = {file:"pet2.jpg", name:"Eduardo"};
-		var pet3 = {file:"pet3.jpg", name:"Angelica"};
-		var pet4 = {file:"pet4.jpg", name:"Salad"};
-		var pet5 = {file:"pet5.jpg", name:"Mittens"};
-		
-		pets.push(pet2);
-		pets.push(pet3);
-		pets.push(pet4);
-		pets.push(pet5);
-		pets.push(pet1);
+	pets.push(pet2);
+	pets.push(pet3);
+	pets.push(pet4);
+	pets.push(pet5);
+	pets.push(pet1);
 
-		function changeImage() {
-			document.getElementById("imgClickAndChange").src = pets[0].file;
-			document.getElementById("pet-name").innerHTML = getName(pets[0]);
-			pets.push(pets.shift());
+	function changeImage() {
+		document.getElementById("imgClickAndChange").src = pets[0].file;
+		document.getElementById("pet-name").innerHTML = getName(pets[0]);
+		pets.push(pets.shift());
 
-			document.getElementById("stars").reset();
-		}
+		document.getElementById("stars").reset();
+	}
 
-		var getName = pet => pet.name;
-	</script>
+	var getName = pet => pet.name;
+</script>
 
 <body>
-
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
 		<a class="navbar-brand" href="#">Rate These Pets!</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -103,8 +101,8 @@
 		</div>
 	</div>
 
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-
 </body>
 </html>

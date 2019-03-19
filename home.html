@@ -36,7 +36,7 @@
 	}
 
 // Arrow function
-	var getName = pet => pet.name;
+var getName = pet => pet.name;
 </script>
 
 <body>
@@ -104,7 +104,13 @@
 
 	<script>
 		// Event listener and anonymous function
-		document.getElementById("animal-image").addEventListener("click", function() {alert("good boyo :)");});
+		document.getElementById("animal-image").addEventListener("click", function() {
+			if (document.getElementById("animal-image").classList.contains("loading")) {
+				document.getElementById("animal-image").classList.remove("loading");
+			} else {
+				document.getElementById("animal-image").classList.add("loading");
+			}
+		});
 	</script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

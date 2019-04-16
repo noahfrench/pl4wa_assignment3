@@ -97,7 +97,6 @@ session_start();
 		<a class="navbar-brand" href="./">
 			<img class="top-logo" alt="Rate these Pets!" src="logo_transparent1.png">
 		</a>
-		<a class="navbar-brand" href="./">Rate These Pets!</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 			<span class="navbar-toggler-icon"></span>
 		</button>

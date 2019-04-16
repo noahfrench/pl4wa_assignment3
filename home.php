@@ -17,6 +17,9 @@ session_start();
 
 </head>
 <script>
+	if (getCookie("petNum") == "") {
+		document.cookie = "petNum=0";
+	}
 	var pets = [];
 	var pet1 = {
 		file: "pet1.jpg",
@@ -45,26 +48,44 @@ session_start();
 	pets.push(pet5);
 	pets.push(pet1);
 
+	function getCookie(cname) {
+		var name = cname + "=";
+		var decodedCookie = decodeURIComponent(document.cookie);
+		var ca = decodedCookie.split(';');
+		for(var i = 0; i <ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+			c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+			return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
+
 	function skipPet() {
 		changeImage();
 		document.getElementById("stars").reset();
 	}
 
 	function submitRating() {
-		document.getElementById('ratedPetName').value = pets[pets.length - 1].name;
-		document.getElementById('ratedPetFile').value = pets[pets.length - 1].file;
+		document.getElementById('ratedPetName').value = pets[getCookie('petNum')].name;
+		document.getElementById('ratedPetFile').value = pets[getCookie('petNum')].file;
 		changeImage();
 	}
 
 	function changeImage() {
-		document.getElementById("animal-image").src = pets[0].file;
-		document.getElementById("pet-name").innerHTML = getName(pets[0]);
+		var nextNum = parseInt(getCookie("petNum")) + 1;
+		if (nextNum >= pets.length) {
+			nextNum = 0;
+		}
 
-		pets.push(pets.shift());
-		<?php
-		$nextNum = $_COOKIE['currentPet'] + 1;
-		setcookie("currentPet", $nextNum, time() + (86400*30), "/")
-		?>
+		document.cookie = "petNum=" + nextNum;
+
+		console.log(nextNum);
+		document.getElementById("animal-image").src = pets[nextNum].file;
+		document.getElementById("pet-name").innerHTML = getName(pets[nextNum]);
 	}
 
 	// Arrow function
@@ -171,6 +192,9 @@ session_start();
 	</div>
 
 	<script>
+		document.getElementById("animal-image").src = pets[getCookie('petNum')].file;
+		document.getElementById("pet-name").innerHTML = getName(pets[getCookie('petNum')]);
+
 		// Event listener and anonymous function
 		document.getElementById("animal-image").addEventListener("click", function () {
 			if (document.getElementById("animal-image").classList.contains("loading")) {

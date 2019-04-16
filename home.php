@@ -1,3 +1,6 @@
+<?php 
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,6 +61,10 @@
 		document.getElementById("pet-name").innerHTML = getName(pets[0]);
 
 		pets.push(pets.shift());
+		<?php
+		$nextNum = $_COOKIE['currentPet'] + 1;
+		setcookie("currentPet", $nextNum, time() + (86400*30), "/")
+		?>
 	}
 
 	// Arrow function
@@ -106,6 +113,11 @@
 
 		<img class="animal-pic" alt="slideshow" src="pet1.jpg" id="animal-image" />
 
+		<span>
+			<?php
+			echo "Hello, " . $_SESSION['user'] . "!";
+			?>
+		</span>
 
 		<div id="pet-name">
 			<script>
@@ -150,19 +162,14 @@
 		<div class="skip-pet" onclick="skipPet();">
 			skip this pet :/
 		</div>
-		<div class="color-choice" style="padding-top: 15px; padding-bottom: 15px">
-			<h5>Choose Background Color:</h5>
-				<form action="colors.php">
-					<select name="color">
-					  <option value="red">Red</option>
-					  <option value="orange">Orange</option>
-					  <option value="yellow">Yellow</option>
-					  <option value="white">White</option>
-					  <option value="black">Black</option>
-					</select>
-					<br><br>
-					<input type="submit">
-				  </form>
+
+		<div style="position: absolute; bottom: 0;">
+			<?php
+			if(isset($_COOKIE['timeStarted'])) {
+				$totalTime = time() - $_COOKIE['timeStarted'];
+				echo "Total time spent rating pets: " . $totalTime . " seconds";
+			}
+			?>
 		</div>
 	</div>
 

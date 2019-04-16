@@ -9,7 +9,10 @@ function reject($errorType) {
 
 function accept($user) {
     $_SESSION['user'] = $user;
-    header('Location: ./home.html');
+    // Make the cookie last 100 years.
+    $time = time();
+    setcookie("timeStarted", $time);
+    header('Location: ./home.php');
     exit();
 }
 

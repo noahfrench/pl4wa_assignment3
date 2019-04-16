@@ -6,16 +6,13 @@ $rating = $_POST['rating'];
 $petName = $_POST['petName'];
 $petFile = $_POST['petFile'];
 
-echo $petName;
-echo $petFile;
-
 if (!isset($user)) {
     header("Location: login.html");
     exit();
 }
 
 if ($rating == NULL) {
-    header("Location: home.html");
+    header("Location: home.php");
     exit();
 }
 
@@ -42,4 +39,7 @@ $newPet->addAttribute("name", $petName);
 $newPet->addAttribute("file", $petFile);
 
 $xml->asXML("userData.xml");
+
+header("Location: home.php");
+exit();
 ?>

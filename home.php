@@ -1,3 +1,6 @@
+<?php 
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,6 +61,10 @@
 		document.getElementById("pet-name").innerHTML = getName(pets[0]);
 
 		pets.push(pets.shift());
+		<?php
+		$nextNum = $_COOKIE['currentPet'] + 1;
+		setcookie("currentPet", $nextNum, time() + (86400*30), "/")
+		?>
 	}
 
 	// Arrow function
@@ -66,7 +73,7 @@
 
 <body>
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark" style="background-color:#232D4B !important;">
-		<a class="navbar-brand" href="./home.html">Rate These Pets!</a>
+		<a class="navbar-brand" href="./home.php">Rate These Pets!</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -103,6 +110,11 @@
 
 		<img class="animal-pic" alt="slideshow" src="pet1.jpg" id="animal-image" />
 
+		<span>
+			<?php
+			echo "Hello, " . $_SESSION['user'] . "!";
+			?>
+		</span>
 
 		<div id="pet-name">
 			<script>
@@ -146,6 +158,15 @@
 
 		<div class="skip-pet" onclick="skipPet();">
 			skip this pet :/
+		</div>
+
+		<div style="position: absolute; bottom: 0;">
+			<?php
+			if(isset($_COOKIE['timeStarted'])) {
+				$totalTime = time() - $_COOKIE['timeStarted'];
+				echo "Total time spent rating pets: " . $totalTime . " seconds";
+			}
+			?>
 		</div>
 	</div>
 

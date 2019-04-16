@@ -20,8 +20,8 @@
         <star3>
         </star3>
         <star4>
-        </star4>
+        <pet name="Biscuits" file="pet9.jpg"/></star4>
         <star5>
-        </star5>
+        <pet name="Biscuits" file="pet9.jpg"/></star5>
     </user>
 </users>

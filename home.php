@@ -41,11 +41,36 @@ session_start();
 		file: "pet5.jpg",
 		name: "Mittens"
 	};
+	var pet6 = {
+		file: "pet6.jpg",
+		name: "Nancy"
+	};
+	var pet7 = {
+		file: "pet7.jpg",
+		name: "Alejandro"
+	};
+	var pet8 = {
+		file: "pet8.jpg",
+		name: "Upsorn"
+	};
+	var pet9 = {
+		file: "pet9.jpg",
+		name: "Biscuits"
+	};
+	var pet10 = {
+		file: "pet10.jpg",
+		name: "Guillermo"
+	}
 
 	pets.push(pet2);
 	pets.push(pet3);
 	pets.push(pet4);
 	pets.push(pet5);
+	pets.push(pet6);
+	pets.push(pet7);
+	pets.push(pet8);
+	pets.push(pet9);
+	pets.push(pet10);
 	pets.push(pet1);
 
 	function getCookie(cname) {

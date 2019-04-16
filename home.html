@@ -14,13 +14,27 @@
 
 </head>
 <script>
-
 	var pets = [];
-	var pet1 = {file:"pet1.jpg", name:"Rufus"};
-	var pet2 = {file:"pet2.jpg", name:"Eduardo"};
-	var pet3 = {file:"pet3.jpg", name:"Angelica"};
-	var pet4 = {file:"pet4.jpg", name:"Salad"};
-	var pet5 = {file:"pet5.jpg", name:"Mittens"};
+	var pet1 = {
+		file: "pet1.jpg",
+		name: "Rufus"
+	};
+	var pet2 = {
+		file: "pet2.jpg",
+		name: "Eduardo"
+	};
+	var pet3 = {
+		file: "pet3.jpg",
+		name: "Angelica"
+	};
+	var pet4 = {
+		file: "pet4.jpg",
+		name: "Salad"
+	};
+	var pet5 = {
+		file: "pet5.jpg",
+		name: "Mittens"
+	};
 
 	pets.push(pet2);
 	pets.push(pet3);
@@ -28,16 +42,26 @@
 	pets.push(pet5);
 	pets.push(pet1);
 
-	function changeImage() {
-		document.getElementById("animal-image").src = pets[0].file;
-		document.getElementById("pet-name").innerHTML = getName(pets[0]);
-		pets.push(pets.shift());
-
+	function skipPet() {
+		changeImage();
 		document.getElementById("stars").reset();
 	}
 
-// Arrow function
-var getName = pet => pet.name;
+	function submitRating() {
+		document.getElementById('ratedPetName').value = pets[pets.length - 1].name;
+		document.getElementById('ratedPetFile').value = pets[pets.length - 1].file;
+		changeImage();
+	}
+
+	function changeImage() {
+		document.getElementById("animal-image").src = pets[0].file;
+		document.getElementById("pet-name").innerHTML = getName(pets[0]);
+
+		pets.push(pets.shift());
+	}
+
+	// Arrow function
+	var getName = pet => pet.name;
 </script>
 
 <body>
@@ -49,13 +73,14 @@ var getName = pet => pet.name;
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">   
+		<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item">
 					<a class="nav-link" href="./ratedpets.html">Pets I've Rated</a>
-				</li>              
+				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Animal</a>
+					<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">Animal</a>
 					<div class="dropdown-menu" aria-labelledby="dropdown01">
 						<a class="dropdown-item" href="#">Dogs</a>
 						<a class="dropdown-item" href="#">Cats</a>
@@ -63,8 +88,8 @@ var getName = pet => pet.name;
 						<a class="dropdown-item" href="#">Rabbits</a>
 						<a class="dropdown-item" href="#">Birds</a>
 					</div>
-				</li>                            
-				<li class="nav-item"> 
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" href="#">About Us</a>
 				</li>
 				<li class="nav-item">
@@ -74,12 +99,12 @@ var getName = pet => pet.name;
 					<a class="nav-link" href="./login.html">Log In</a>
 				</button>
 			</ul>
-		</div>  
+		</div>
 	</nav>
 
-	<div class="container text-center" >
+	<div class="container text-center">
 
-		<img class="animal-pic" alt="slideshow" src="pet1.jpg" id="animal-image"/>
+		<img class="animal-pic" alt="slideshow" src="pet1.jpg" id="animal-image" />
 
 
 		<div id="pet-name">
@@ -89,22 +114,40 @@ var getName = pet => pet.name;
 		</div>
 
 		<div class="d-flex justify-content-center" style="padding-top: 10px;">
-			<form class="rating" id="stars">
-				<input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-				<input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-				<input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-				<input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-				<input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-				<input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title=" bad - 2.5 stars"></label>
-				<input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-				<input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Kinda bad - 1.5 stars"></label>
-				<input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-				<input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+			<form id="stars" method="POST" action="submitRating.php">
+				<span class="rating">
+					<input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5"
+						title="Awesome - 5 stars"></label>
+					<input type="radio" id="star4half" name="rating" value="4.5" /><label class="half" for="star4half"
+						title="Pretty good - 4.5 stars"></label>
+					<input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4"
+						title="Pretty good - 4 stars"></label>
+					<input type="radio" id="star3half" name="rating" value="3.5" /><label class="half" for="star3half"
+						title="Meh - 3.5 stars"></label>
+					<input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3"
+						title="Meh - 3 stars"></label>
+					<input type="radio" id="star2half" name="rating" value="2.5" /><label class="half" for="star2half"
+						title=" bad - 2.5 stars"></label>
+					<input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2"
+						title="Kinda bad - 2 stars"></label>
+					<input type="radio" id="star1half" name="rating" value="1.5" /><label class="half" for="star1half"
+						title="Kinda bad - 1.5 stars"></label>
+					<input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1"
+						title="Sucks big time - 1 star"></label>
+					<input type="radio" id="starhalf" name="rating" value=".5" /><label class="half" for="starhalf"
+						title="Sucks big time - 0.5 stars"></label>
+				</span>
+				<span>
+					<button type="submit" class="btn btn-primary" style="height: 100%; margin-left: 10px;"
+						onclick="submitRating();">submit
+						rating!</button>
+				</span>
+				<input type="hidden" id="ratedPetName" name="petName" value="" />
+				<input type="hidden" id="ratedPetFile" name="petFile" value="" />
 			</form>
-			<button type="button" class="btn btn-primary" style="height: 100%; margin-left: 10px;" onclick="changeImage()">submit rating!</button>
 		</div>
 
-		<div class="skip-pet" onclick="changeImage(); clearStars();">
+		<div class="skip-pet" onclick="skipPet();">
 			skip this pet :/
 		</div>
 		<div class="color-choice" style="padding-top: 15px; padding-bottom: 15px">
@@ -125,7 +168,7 @@ var getName = pet => pet.name;
 
 	<script>
 		// Event listener and anonymous function
-		document.getElementById("animal-image").addEventListener("click", function() {
+		document.getElementById("animal-image").addEventListener("click", function () {
 			if (document.getElementById("animal-image").classList.contains("loading")) {
 				document.getElementById("animal-image").classList.remove("loading");
 			} else {
@@ -137,4 +180,5 @@ var getName = pet => pet.name;
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </body>
+
 </html>

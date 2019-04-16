@@ -160,7 +160,8 @@ session_start();
 
 		<span>
 			<?php
-			echo "Hello, " . $_SESSION['user'] . "!";
+			if (isset($_SESSION['user']))
+				echo "Hello, " . $_SESSION['user'] . "!";
 			?>
 		</span>
 

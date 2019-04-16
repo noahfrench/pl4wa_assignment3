@@ -7,6 +7,11 @@
   height: 20%;
 }
 
+.rated-item {
+  width: 20%;
+  height: 20%;
+}
+
 .animal-pic {
   max-width: 65%;
   max-height: 550px;

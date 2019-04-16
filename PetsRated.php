@@ -66,7 +66,8 @@ session_start();
                     echo "<h5><u>" . $stars['title'] . "</u></h5>" . "<br/>";
                     echo "<ul>";
                     foreach($stars->children() as $pets) {
-                        echo "<li>" . $pets['name'] . "</li>";
+												echo "<li>" . $pets['name'] . "</li>";
+												echo "<img  class='rated-item' src= '" . $pets['file'] . "' alt= '" . $pets['name'] . "'>";
                     }
                     echo "</ul>";
                 }              

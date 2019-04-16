@@ -6,22 +6,22 @@
         <star2 title="2 Stars">
         </star2>
         <star3 title="3 Stars">
-        <pet name="Salad" file="pet4.jpg"/><pet name="Nancy" file="pet6.jpg"/></star3>
+        </star3>
         <star4 title="4 Stars">
         </star4>
         <star5 title="5 Stars">
-        <pet name="Angelica" file="pet3.jpg"/><pet name="Mittens" file="pet5.jpg"/></star5>
+        </star5>
     </user>
     <user name="mike">
         <star1 title="1 Star">
-        <pet name="Biscuits" file="pet9.jpg"/><pet name="Rufus" file="pet1.jpg"/><pet name="Upsorn" file="pet8.jpg"/></star1>
+        </star1>
         <star2 title="2 Stars">
-        <pet name="Guillermo" file="pet10.jpg"/><pet name="Angelica" file="pet3.jpg"/><pet name="Nancy" file="pet6.jpg"/></star2>
+        </star2>
         <star3 title="3 Stars">
-        <pet name="Salad" file="pet4.jpg"/><pet name="Alejandro" file="pet7.jpg"/></star3>
+        </star3>
         <star4 title="4 Stars">
-        <pet name="Biscuits" file="pet9.jpg"/><pet name="Alejandro" file="pet7.jpg"/><pet name="Eduardo" file="pet2.jpg"/></star4>
+        </star4>
         <star5 title="5 Stars">
-        <pet name="Biscuits" file="pet9.jpg"/><pet name="Upsorn" file="pet8.jpg"/></star5>
+        </star5>
     </user>
 </users>

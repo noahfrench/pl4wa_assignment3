@@ -1,3 +1,6 @@
+<?php 
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +17,7 @@
 
 </head>
 
-<body>
+<body class="rated-pets">
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark" style="background-color:#232D4B !important;">
 		<a class="navbar-brand" href="./">
 			<img class="top-logo" alt="Rate these Pets!" src="logo_transparent1.png">
@@ -26,7 +29,7 @@
 		<div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link" href="./ratedpets.html">Pets I've Rated</a>
+					<a class="nav-link" href="./PetsRated.php">Pets I've Rated</a>
 				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
@@ -51,9 +54,25 @@
 			</ul>
 		</div>
     </nav>
-    
     <?php 
 
-        $xml = simplexml_load_file();
+        $xml = simplexml_load_file("userData.xml");
+        //if ($_SESSION['user'] == 'mike') {}
+        foreach ($xml->children() as $users) {
+            if ($users['name'] == $_SESSION['user']) {
+                echo "<h1><strong>" . $users['name'] . "</strong></h1>" . "<br/>";
+                foreach($users->children() as $stars) {
+                    echo "<br/>";
+                    echo "<h5><u>" . $stars['title'] . "</u></h5>" . "<br/>";
+                    echo "<ul>";
+                    foreach($stars->children() as $pets) {
+                        echo "<li>" . $pets['name'] . "</li>";
+                    }
+                    echo "</ul>";
+                }              
+            }
+        }
+?>
+</body>
 
-    ?>
+</html>

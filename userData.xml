@@ -1,27 +1,27 @@
 <?xml version="1.0"?>
 <users>
     <user name="noah">
-        <star1>
+        <star1 title="1 Star">
         </star1>
-        <star2>
+        <star2 title="2 Stars">
         </star2>
-        <star3>
-        </star3>
-        <star4>
+        <star3 title="3 Stars">
+        <pet name="Salad" file="pet4.jpg"/><pet name="Nancy" file="pet6.jpg"/></star3>
+        <star4 title="4 Stars">
         </star4>
-        <star5>
-        </star5>
+        <star5 title="5 Stars">
+        <pet name="Angelica" file="pet3.jpg"/><pet name="Mittens" file="pet5.jpg"/></star5>
     </user>
     <user name="mike">
-        <star1>
+        <star1 title="1 Star">
         </star1>
-        <star2>
+        <star2 title="2 Stars">
         </star2>
-        <star3>
+        <star3 title="3 Stars">
         </star3>
-        <star4>
+        <star4 title="4 Stars">
         <pet name="Biscuits" file="pet9.jpg"/></star4>
-        <star5>
+        <star5 title="5 Stars">
         <pet name="Biscuits" file="pet9.jpg"/></star5>
     </user>
 </users>

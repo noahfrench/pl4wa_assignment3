@@ -2,6 +2,11 @@
 
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
+.top-logo {
+  width: 20%;
+  height: 20%;
+}
+
 .animal-pic {
   width: 65%;
   margin-top: 15px;

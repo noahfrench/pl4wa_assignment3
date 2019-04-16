@@ -17,10 +17,12 @@
          {
             padding-top: 15px;
         }
-    
     </style>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="background-color:#232D4B !important;">
-        <a class="navbar-brand" href="./home.html">Rate These Pets!</a>
+        <a class="navbar-brand" href="./">
+            <img alt="Rate these Pets!" class="top-logo" src="logo_transparent1.png">
+        </a>
+        <a class="navbar-brand" href="./">Rate These Pets!</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>

@@ -42,7 +42,10 @@ var getName = pet => pet.name;
 
 <body>
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark" style="background-color:#232D4B !important;">
-		<a class="navbar-brand" href="./home.html">Rate These Pets!</a>
+		<a class="navbar-brand" href="./">
+			<img class="top-logo" alt="Rate these Pets!" src="logo_transparent1.png">
+		</a>
+		<a class="navbar-brand" href="./">Rate These Pets!</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -103,6 +106,20 @@ var getName = pet => pet.name;
 
 		<div class="skip-pet" onclick="changeImage(); clearStars();">
 			skip this pet :/
+		</div>
+		<div class="color-choice" style="padding-top: 15px; padding-bottom: 15px">
+			<h5>Choose Background Color:</h5>
+				<form action="colors.php">
+					<select name="color">
+					  <option value="red">Red</option>
+					  <option value="orange">Orange</option>
+					  <option value="yellow">Yellow</option>
+					  <option value="white">White</option>
+					  <option value="black">Black</option>
+					</select>
+					<br><br>
+					<input type="submit">
+				  </form>
 		</div>
 	</div>
 

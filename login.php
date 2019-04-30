@@ -19,26 +19,33 @@ function accept($user) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = $_POST['username'];
     $pw = $_POST['password'];
+    $nameWord = 'name';
+    $pwWord = 'password';
 
-    if ($user == 'mike') {
-        if ($pw != 'password') {
-            reject('password');
-        } else {
-            accept($user);
-        }
-    } else if ($user == 'noah') {
-        if ($pw != 'password') {
-            reject('password');
-        } else {
-            accept($user);
-        }
-    } else if ($user == '') {
+    $userExists = false;
+
+    if ($user == '')
         reject('noName');
-    } else if ($pw == '') {
+    else if ($pw == '')
         reject('noPw');
-    } else {
-        reject('username');
+
+    $xml = simplexml_load_file("userData.xml");
+
+    foreach($xml->children() as $child) {
+        $curName = (string)$child->attributes()->$nameWord;
+        $curPw = (string)$child->attributes()->$pwWord;
+
+        if ($user == $curName) {
+            $userExists = true;
+            if ($pw == $curPw)
+                accept($user);
+        }
     }
+
+    if (!$userExists)
+        reject('username');
+    else
+        reject('password');
 }
 
 ?>

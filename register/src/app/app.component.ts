@@ -42,7 +42,7 @@ export class AppComponent {
           //this.responsedata = data;
         },
         error => {
-          console.log("fyck life", error);
+          console.log("Error", error);
         }
       );
   }

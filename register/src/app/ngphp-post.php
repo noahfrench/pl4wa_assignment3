@@ -15,19 +15,16 @@ $postdata = file_get_contents("php://input");
 
 // process data 
 // (this example simply extracts the data and restructures them back) 
-$request = json_decode($postdata);
+$request = json_decode($postdata, true);
 
-$userName = $request[0];
-$pw = $request[1];
+$username = $request['username'];
+$password = $request['password'];
 
 $data = [];
 foreach ($request as $k => $v)
 {
   $data[0][$k] = $v;
 }
-
-//$pw = $data[0][0];
-//$un = $data[0][1];
 
 // sent response (in json format) back to the front end
 echo json_encode(['content'=>$data]);

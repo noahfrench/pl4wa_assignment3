@@ -13,14 +13,12 @@ import {
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = "register";
+  title = "Create Account";
 
   // let's create a property to store a response from the back end
   // and try binding it back to the view
-  responsedata = "response data";
 
-  drinks = ["Coffee", "Tea", "Milk"];
-  orderModel = new Order("duh", "duh@uva.edu", 9991234567, "", "", true);
+  orderModel = new Order("", "");
 
   constructor(private http: HttpClient) {}
 
@@ -29,17 +27,22 @@ export class AppComponent {
 
     let params = JSON.stringify(data);
 
+    //this.http.post("ngphp-post.php", data);
+
     //this.http.get('http://localhost/cs4640s19/ngphp-get.php?str='+encodeURIComponent(params))
     this.http
-      .get("http://localhost/cs4640s19/ngphp-get.php?str=" + params)
-      //this.http.post('http://localhost/cs4640s19/ngphp-post.php', data)
+      //.get("ngphp-get.php" + params)
+      .post(
+        "http://localhost/pl4wa_assignment3/register/src/app/ngphp-post.php",
+        data
+      )
       .subscribe(
         data => {
           console.log("Got data from backend", data);
           //this.responsedata = data;
         },
         error => {
-          console.log("Error", error);
+          console.log("fyck life", error);
         }
       );
   }

@@ -15,10 +15,20 @@ import {
 export class AppComponent {
   title = "Create Account";
 
+  flavors = [
+    "Chocolate",
+    "Vanilla",
+    "Pistachio",
+    "Birthday Cake",
+    "Mint Chocolate Chip",
+    "Strawberry",
+    "Rocky Road"
+  ];
+
   // let's create a property to store a response from the back end
   // and try binding it back to the view
 
-  orderModel = new Order("", "");
+  orderModel = new Order("", "", "");
 
   constructor(private http: HttpClient) {}
 

@@ -17,7 +17,7 @@ if ($rating == NULL) {
 }
 
 // Load the data and push the pet to the appropriate star number in the appropriate user
-$xml = simplexml_load_file("userData.xml");
+$xml = simplexml_load_file("./register/src/app/userData.xml");
 
 $att='name';
 
@@ -41,7 +41,7 @@ foreach($xml->children() as $child) {
 $newPet->addAttribute("name", $petName);
 $newPet->addAttribute("file", $petFile);
 
-$xml->asXML("userData.xml");
+$xml->asXML("./register/src/app/userData.xml");
 
 header("Location: home.php");
 exit();

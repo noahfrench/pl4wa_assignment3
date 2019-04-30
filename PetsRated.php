@@ -58,7 +58,7 @@ session_start();
 	</nav>
     <?php 
 
-        $xml = simplexml_load_file("userData.xml");
+        $xml = simplexml_load_file("./register/src/app/userData.xml");
         //if ($_SESSION['user'] == 'mike') {}
         foreach ($xml->children() as $users) {
             if ($users['name'] == $_SESSION['user']) {

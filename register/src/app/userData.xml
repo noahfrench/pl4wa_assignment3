@@ -2,15 +2,15 @@
 <users>
     <user name="noah" password="password">
         <star1 title="1 Star">
-        </star1>
+        <pet name="Alejandro" file="pet7.jpg"/></star1>
         <star2 title="2 Stars">
-        </star2>
+        <pet name="Mittens" file="pet5.jpg"/><pet name="Upsorn" file="pet8.jpg"/><pet name="Guillermo" file="pet10.jpg"/></star2>
         <star3 title="3 Stars">
         </star3>
         <star4 title="4 Stars">
-        </star4>
+        <pet name="Nancy" file="pet6.jpg"/></star4>
         <star5 title="5 Stars">
-        </star5>
+        <pet name="Biscuits" file="pet9.jpg"/></star5>
     </user>
     <user name="mike" password="password">
         <star1 title="1 Star">

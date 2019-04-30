@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     else if ($pw == '')
         reject('noPw');
 
-    $xml = simplexml_load_file("userData.xml");
+    $xml = simplexml_load_file("./register/src/app/userData.xml");
 
     foreach($xml->children() as $child) {
         $curName = (string)$child->attributes()->$nameWord;

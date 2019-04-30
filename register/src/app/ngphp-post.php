@@ -47,6 +47,6 @@ $newUser->star5->addAttribute("title", "5 Stars");
 
 $xml->asXML("userData.xml"); //edit this to be true file path
 
-header("Location: http://localhost/pl4wa_assignment3/home.php");
-exit();
+//header("Location: http://localhost:4200");
+//exit();
 ?>

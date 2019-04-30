@@ -26,4 +26,4 @@
     </user>
 <user name="john" password="password"><star1 title="1 Star"/><star2 title="2 Stars"/><star3 title="3 Stars"/><star4 title="4 Stars"/><star5 title="5 Stars"/></user>
 <user name="mikey" password="woooood"><star1 title="1 Star"/><star2 title="2 Stars"/><star3 title="3 Stars"/><star4 title="4 Stars"/><star5 title="5 Stars"/></user>
-</users>
+<user name="newguy" password="password"><star1 title="1 Star"/><star2 title="2 Stars"/><star3 title="3 Stars"/><star4 title="4 Stars"/><star5 title="5 Stars"/></user></users>

@@ -27,6 +27,26 @@ foreach ($request as $k => $v)
 }
 
 // sent response (in json format) back to the front end
-echo json_encode(['content'=>$data]);
+// echo json_encode(['content'=>$data]);
 
+$xml = simplexml_load_file("userData.xml") or die("Error: Cannot create object");
+
+$newUser = $xml->addChild("user");
+$newUser->addAttribute("name", $username);
+$newUser->addAttribute("password", $password);
+$newUser->addChild("star1");
+$newUser->star1->addAttribute("title", "1 Star");
+$newUser->addChild("star2");
+$newUser->star2->addAttribute("title", "2 Stars");
+$newUser->addChild("star3");
+$newUser->star3->addAttribute("title", "3 Stars");
+$newUser->addChild("star4");
+$newUser->star4->addAttribute("title", "4 Stars");
+$newUser->addChild("star5");
+$newUser->star5->addAttribute("title", "5 Stars");
+
+$xml->asXML("userData.xml"); //edit this to be true file path
+
+header("Location: http://localhost/pl4wa_assignment3/home.php");
+exit();
 ?>

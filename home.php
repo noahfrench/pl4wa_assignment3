@@ -147,6 +147,9 @@ session_start();
 				<li class="nav-item">
 					<a class="nav-link" href="#">Contact</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="http://localhost:4200">Create Account</a>
+				</li>
 				<button class="btn btn-secondary" style="width: 90px;">
 					<a class="nav-link" href="./login.html">Log In</a>
 				</button>

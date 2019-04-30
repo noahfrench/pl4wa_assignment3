@@ -18,11 +18,10 @@ session_start();
 </head>
 
 <body class="rated-pets">
-	<nav class="navbar navbar-expand-md bg-dark navbar-dark" style="background-color:#232D4B !important;">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark" style="background-color:#232D4B !important;">
 		<a class="navbar-brand" href="./">
 			<img class="top-logo" alt="Rate these Pets!" src="logo_transparent1.png">
 		</a>
-		<a class="navbar-brand" href="./">Rate These Pets!</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -48,12 +47,15 @@ session_start();
 				<li class="nav-item">
 					<a class="nav-link" href="#">Contact</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="http://localhost:4200">Create Account</a>
+				</li>
 				<button class="btn btn-secondary" style="width: 90px;">
 					<a class="nav-link" href="./login.html">Log In</a>
 				</button>
 			</ul>
 		</div>
-    </nav>
+	</nav>
     <?php 
 
         $xml = simplexml_load_file("userData.xml");

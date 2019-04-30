@@ -1,44 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="assets/style.css">
   <!--Authors: Mike Wood (mgw3pf) and Noah French (njf5c)-->
-
-  <script>
-    function validateForm() {
-      var x = document.forms["signinForm"]["username"].value;
-      var y = document.forms["signinForm"]["password"].value;
-
-      if (x == "" && y == "") {
-        alert("Username and Password must be filled out")
-        return false;
-      }
-
-      if (x == "") {
-        alert("Username must be filled out");
-        return false;
-      }
-
-      if (y == "") {
-        alert("Password must be filled out");
-        return false;
-      }
-    }
-  </script>
 
 </head>
 
 <body>
   <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="background-color:#232D4B !important;">
-    <a class="navbar-brand" href="./">
-      <img class="top-logo" alt="Rate these Pets!" src="logo_transparent1.png">
+    <a class="navbar-brand" href="http://localhost/pl4wa_assignment3/home.php">
+      <img class="top-logo" alt="Rate these Pets!" src="assets/logo_transparent1.png">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -46,7 +25,7 @@
     <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="./PetsRated.php">Pets I've Rated</a>
+          <a class="nav-link" href="http://localhost/pl4wa_assignment3/PetsRated.php">Pets I've Rated</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
@@ -69,37 +48,13 @@
           <a class="nav-link" href="http://localhost:4200">Create Account</a>
         </li>
         <button class="btn btn-secondary" style="width: 90px;">
-          <a class="nav-link" href="./login.html">Log In</a>
+          <a class="nav-link" href="http://localhost/pl4wa_assignment3/login.html">Log In</a>
         </button>
       </ul>
     </div>
   </nav>
-
-  <div class="container">
-    <h1>Log In</h1>
-
-    <form name="signinForm" method="POST" action='login.php'>
-      <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" name="username" class="form-control" />
-        <span class="error" id="username-note"></span>
-      </div>
-
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" name="password" class="form-control" />
-        <span class="error" id="password-note"></span>
-      </div>
-
-      <input type="submit" class="btn btn-light" id="signin" value="Sign in" />
-
-    </form>
-
-  </div>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-
 </body>
+
+<router-outlet></router-outlet>
 
 </html>

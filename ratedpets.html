@@ -15,20 +15,21 @@
 <body>
 
   <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="background-color:#232D4B !important;">
-      <a class="navbar-brand" href="./">
-        <img class="top-logo" alt="Rate these Pets!" src="logo_transparent1.png">
-      </a>
+    <a class="navbar-brand" href="./">
+      <img class="top-logo" alt="Rate these Pets!" src="logo_transparent1.png">
+    </a>
     <a class="navbar-brand" href="./home.html">Rate These Pets!</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">   
+    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="./ratedpets.html">Pets I've Rated</a>
-        </li>              
+        </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Animal</a>
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Animal</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
             <a class="dropdown-item" href="#">Dogs</a>
             <a class="dropdown-item" href="#">Cats</a>
@@ -36,50 +37,52 @@
             <a class="dropdown-item" href="#">Rabbits</a>
             <a class="dropdown-item" href="#">Birds</a>
           </div>
-        </li>                            
-        <li class="nav-item"> 
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="#">About Us</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:4200">Create Account</a>
+        </li>
         <button class="btn btn-secondary" style="width: 90px;">
           <a class="nav-link" href="./login.html">Log In</a>
         </button>
       </ul>
-    </div>  
+    </div>
   </nav>
 
   <div id="photo-grid"></div>
 
   <script>
-
     var category = "All Pets";
 
     var render = function (template, node) {
-    if (!node) return;
+      if (!node) return;
       node.innerHTML = (typeof template === 'function' ? template() : template);
     };
 
     // A function that returns a string
     var template = function () {
-        if (category === "All Pets") {
-            template = '<h1>All Pets</h1>';
-        } else if (category === "5 Star Pets") {
-            template = '<h1>5 Star Pets</h1>';
-        } else if (category === "4 Star Pets") {
-            template = '<h1>4 Star Pets</h1>';
-        } else if (category === "3 Star Pets") {
-            template = '<h1>3 Star Pets</h1>';
-        } else if (category === "2 Star Pets") {
-            template = '<h1>2 Star Pets</h1>';
-        } else {
-            template = '<h1>1 Star Pets</h1>';
-        } 
-        return template;
+      if (category === "All Pets") {
+        template = '<h1>All Pets</h1>';
+      } else if (category === "5 Star Pets") {
+        template = '<h1>5 Star Pets</h1>';
+      } else if (category === "4 Star Pets") {
+        template = '<h1>4 Star Pets</h1>';
+      } else if (category === "3 Star Pets") {
+        template = '<h1>3 Star Pets</h1>';
+      } else if (category === "2 Star Pets") {
+        template = '<h1>2 Star Pets</h1>';
+      } else {
+        template = '<h1>1 Star Pets</h1>';
+      }
+      return template;
     };
 
-    
+
 
     function changeCategory(newCategory) {
       category = newCategory;
@@ -88,7 +91,7 @@
     }
 
     var url = window.location.pathname;
-    var filename = url.substring(url.lastIndexOf('/')+1);
+    var filename = url.substring(url.lastIndexOf('/') + 1);
 
     function display() {
       if (filename == "ratedpets.html") {
@@ -106,11 +109,10 @@
       }
     }
 
-  //render(template, document.querySelector('#photo-grid'));
-
+    //render(template, document.querySelector('#photo-grid'));
   </script>
 
-<!--
+  <!--
   <div class="row text-center" style="margin-top: 15px;">
     <div class="col-2">
       <button class="btn btn-light" onclick="changeCategory('All Pets');">All Pets</button>
@@ -134,87 +136,87 @@
 
 -->
 
-<div class="row text-center" style="margin-top: 15px;">
-  <div class="col-2">
-    <a href="./ratedpets.html" class="btn btn-light">All Pets</a>
+  <div class="row text-center" style="margin-top: 15px;">
+    <div class="col-2">
+      <a href="./ratedpets.html" class="btn btn-light">All Pets</a>
+    </div>
+    <div class="col-2">
+      <a href="./5star.html" class="btn btn-light">5 Star Pets</a>
+    </div>
+    <div class="col-2">
+      <a href="./4star.html" class="btn btn-light">4 Star Pets</a>
+    </div>
+    <div class="col-2">
+      <a href="./3star.html" class="btn btn-light">3 Star Pets</a>
+    </div>
+    <div class="col-2">
+      <a href="./2star.html" class="btn btn-light">2 Star Pets</a>
+    </div>
+    <div class="col-2">
+      <a href="./1star.html" class="btn btn-light">1 Star Pets</a>
+    </div>
   </div>
-  <div class="col-2">
-    <a href="./5star.html" class="btn btn-light">5 Star Pets</a>
-  </div>
-  <div class="col-2">
-    <a href="./4star.html" class="btn btn-light">4 Star Pets</a>
-  </div>
-  <div class="col-2">
-    <a href="./3star.html" class="btn btn-light">3 Star Pets</a>
-  </div>
-  <div class="col-2">
-    <a href="./2star.html" class="btn btn-light">2 Star Pets</a>
-  </div>
-  <div class="col-2">
-    <a href="./1star.html" class="btn btn-light">1 Star Pets</a>
-  </div>
-</div>
-<!-- 
+  <!-- 
   <div id="animal-grid">
     <h1 class="text-center" id="grid-title">All Pets</h1>
   </div> -->
 
-    <div class="py-5">
-      <div class="container">
-        <div class="row hidden-md-up">
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-block">
-                <img src="pet1.jpg" height='70%' width='70%'></img>
-                <h4 class="card-title">Rufus</h4>
-                <h6 class="card-subtitle text-muted">Dog</h6>
-                <p class="card-text p-y-1">5 stars</p>
-              </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row hidden-md-up">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block">
+              <img src="pet1.jpg" height='70%' width='70%'></img>
+              <h4 class="card-title">Rufus</h4>
+              <h6 class="card-subtitle text-muted">Dog</h6>
+              <p class="card-text p-y-1">5 stars</p>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card">
-                <div class="card-block">
-                    <img src="pet2.jpg" height='70%' width='70%'></img>
-                    <h4 class="card-title">Eduardo</h4>
-                    <h6 class="card-subtitle text-muted">Dog</h6>
-                    <p class="card-text p-y-1">4 stars</p>
-                </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block">
+              <img src="pet2.jpg" height='70%' width='70%'></img>
+              <h4 class="card-title">Eduardo</h4>
+              <h6 class="card-subtitle text-muted">Dog</h6>
+              <p class="card-text p-y-1">4 stars</p>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card">
-                <div class="card-block">
-                    <img src="pet3.jpg" height='70%' width='70%'></img>
-                    <h4 class="card-title">Angelica</h4>
-                    <h6 class="card-subtitle text-muted">Dog</h6>
-                    <p class="card-text p-y-1">4 stars</p>
-                </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block">
+              <img src="pet3.jpg" height='70%' width='70%'></img>
+              <h4 class="card-title">Angelica</h4>
+              <h6 class="card-subtitle text-muted">Dog</h6>
+              <p class="card-text p-y-1">4 stars</p>
             </div>
           </div>
-        </div><br>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card">
-                <div class="card-block">
-                    <img src="pet4.jpg" height='70%' width='70%'></img>
-                    <h4 class="card-title">Salad</h4>
-                    <h6 class="card-subtitle text-muted">Cat</h6>
-                    <p class="card-text p-y-1">3 stars</p>
-                </div>
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block">
+              <img src="pet4.jpg" height='70%' width='70%'></img>
+              <h4 class="card-title">Salad</h4>
+              <h6 class="card-subtitle text-muted">Cat</h6>
+              <p class="card-text p-y-1">3 stars</p>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card">
-                <div class="card-block">
-                    <img src="pet5.jpg" height='70%' width='70%'></img>
-                    <h4 class="card-title">Mittens</h4>
-                    <h6 class="card-subtitle text-muted">Dog</h6>
-                    <p class="card-text p-y-1">2 stars</p>
-                </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-block">
+              <img src="pet5.jpg" height='70%' width='70%'></img>
+              <h4 class="card-title">Mittens</h4>
+              <h6 class="card-subtitle text-muted">Dog</h6>
+              <p class="card-text p-y-1">2 stars</p>
             </div>
           </div>
-          <!--<div class="col-md-4">
+        </div>
+        <!--<div class="col-md-4">
             <div class="card">
                 <div class="card-block">
                     <img src="pet6.jpg" height='70%' width='70%'></img>
@@ -224,15 +226,16 @@
                 </div>
             </div>
           </div>-->
-        </div>
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-    <script src="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-alpha.6.min.js"></script>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+  <script src="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-alpha.6.min.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>

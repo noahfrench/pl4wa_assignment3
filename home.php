@@ -220,6 +220,20 @@ session_start();
 			}
 			?>
 		</div>
+		<p>   </p>
+		<div id="ajax-test" style="position: relative; top: 1;">
+			<form>
+				Select an author:
+				<select name="authors" onchange="showAuthor(this.value)">
+					<option value="">Select an author:</option>
+					<option value="Mike Wood">Mike Wood</option>
+					<option value="Noah French">Noah French</option>
+				</select>
+			</form>
+			<div id="txtHint"><b>Author info will be listed here...</b></div>
+		</div>
+		<p>   </p>
+		<p>   </p>
 	</div>
 
 	<script>
@@ -234,6 +248,28 @@ session_start();
 				document.getElementById("animal-image").classList.add("loading");
 			}
 		});
+	</script>
+	<script>
+		function showAuthor(str) {
+  		if (str=="") {
+    		document.getElementById("txtHint").innerHTML="";
+    		return;
+  		} 
+  		if (window.XMLHttpRequest) {
+    		// code for IE7+, Firefox, Chrome, Opera, Safari
+    		xmlhttp=new XMLHttpRequest();
+  		} else {  // code for IE6, IE5
+    		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  		}
+  		xmlhttp.onreadystatechange=function() {
+    		if (this.readyState==4 && this.status==200) {
+      			document.getElementById("txtHint").innerHTML=this.responseText;
+    		}
+  		}
+  		xmlhttp.open("GET","authorInfo.php?q="+str,true);
+  		xmlhttp.send();
+}
+
 	</script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

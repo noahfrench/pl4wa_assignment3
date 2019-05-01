@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<AUTHORS>
+    <AUTHOR>
+        <NAME>Mike Wood</NAME>
+        <HEIGHT>Not tall</HEIGHT>
+        <AGE>21</AGE>
+        <ICECREAM>Mint Chocolate Chip</ICECREAM>
+    </AUTHOR>
+    <AUTHOR>
+        <NAME>Noah French</NAME>
+        <HEIGHT>Tall</HEIGHT>
+        <AGE>21</AGE>
+        <ICECREAM>Neopolitan</ICECREAM>
+    </AUTHOR>
+</AUTHORS>
